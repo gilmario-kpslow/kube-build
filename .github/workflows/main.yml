@@ -1,0 +1,13 @@
+on:
+  push:
+    branches:
+    - main
+    - release/*
+
+jobs:
+  notificar:
+    name: deploy to staging
+    runs-on: ubuntu-18.04   
+    steps:
+      - name: curl
+        run: curl http://dashboard.truesystem.com.br/notificar
